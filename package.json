@@ -1,0 +1,30 @@
+{
+  "name": "line-by-line",
+  "version": "1.0.0",
+  "description": "Serial file reader with configurable line terminator",
+  "author": "Michael Hodds <mhodds@outlook.com>",
+  "license": "UNLICENSED",
+  "main": "./lib/reader.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MichaelHodds/LineByLine"
+  },
+  "bugs": {
+    "url": "https://github.com/MichaelHodds/LineByLine/issues"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "3.9.x",
+    "gulp-istanbul": "0.10.x",
+    "gulp-jshint": "2.0.x",
+    "gulp-mocha": "2.2.x",
+    "jshint": "2.9.x",
+    "should": "8.2.x"
+  },
+  "scripts": {
+    "lint": "gulp lint",
+    "test": "gulp test",
+    "posttest": "gulp coverage"
+  }
+}
