@@ -8,7 +8,7 @@ My primary motivation for this project was to make a class for use in a text adv
 
 #### Example Usage:
 
-```
+```js
 var LineReader = require("line-by-line");
 
 var reader = new LineReader("./my-file.txt");
@@ -44,7 +44,7 @@ __Arguments__
  * `bufferSize` - *Optional* Bytes to buffer when reading, default = 4096
 
 __Example__
-```
+```js
 var LineReader = require("line-by-line");
 
 var reader = new LineReader("./my-file.txt");
