@@ -23,8 +23,8 @@
     "should": "8.2.x"
   },
   "scripts": {
-    "lint": "gulp lint",
     "test": "gulp test",
-    "posttest": "gulp coverage"
+    "coverage": "gulp coverage",
+    "lint": "gulp lint"
   }
 }

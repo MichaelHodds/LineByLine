@@ -11,41 +11,87 @@ My primary motivation for this project was to make a class for use in a text adv
 ```
 var LineReader = require("line-by-line");
 
-reader = new LineReader("./file.txt");
+var reader = new LineReader("./my-file.txt");
 
 reader.open(function(err) {
 	// Can call read for as many lines as required
 	reader.read(function(err, line) {
-		console.log("Line: " + line);
-		reader.close(function(err) {
+		console.log("First line: " + line);
+		// Call function for every line
+		reader.readEachSeries(function(line, callback) {
+			console.log("Next line: " + line);
+			// ...
+			// Do something async
+			// ...
+			setImmediate(callback);
+		}, function(err) {
+			reader.close(function(err) {
 		});
 	});
 });
 ```
 
-#### API:
+## API:
+---
 
- * constructor(filePath[, terminator, encoding, bufferSize])  
- Create a file reader instance
-  * filePath: path of file to be read, required.
-  * terminator: string or regex to split content by, defaulted to "\n".
-  * encoding: file encoding, defaulted to UTF8.
-  * bufferSize: size (in bytes) to buffer from file, defaulted to 4K. Be aware that internal buffers will grow significantly larger if the file contains a lot of content without any terminators.
+### constructor(filePath[, terminator, encoding, bufferSize])
+Returns a file reader instance
 
- * open(callback)  
- Open the file, will return Node.js fs.open errors
+__Arguments__
+ * `filePath` - Path to a file for reading
+ * `terminator` - *Optional* String or RegExp to split file into "lines", default = "\n"
+ * `encoding` - *Optional* file encoding, default = "UTF8"
+ * `bufferSize` - *Optional* Bytes to buffer when reading, default = 4096
 
- * read(callback)  
- Read a "line" of content
-  * callback(err, line): line will be a string of all characters read up to the terminator, stripped of any leading or trailing whitespace characters.
+__Example__
+```
+var LineReader = require("line-by-line");
 
- * close(callback)  
- Close the file, will return Node.js fs.close errors
+var reader = new LineReader("./my-file.txt");
+```
 
-#### Developer Commands:
+---
+### open(callback)
+Open the file for reading
 
-Install development modules
- * `npm install`
+__Arguments__
+ * `callback(err)` - Callback when opened, will return Node `fs.open` errors
 
-Run development tests
- * `npm test`
+---
+### hasMore()
+Returns `true` if there is more content in file, otherwise `false`
+
+---
+### read(callback)
+Get a "line" of content
+
+__Arguments__
+ * `callback(err, line)` - Callback when "line" of content is read with arguments:
+  * `err` - Node `fs.read` errors
+  * `line` - String of characters up to the set terminator
+
+---
+### readEachSeries(lineCallback, endCallback)
+Call a given function for each remaining "line" in the file
+
+__Arguments__
+ * `lineCallback(line, callback)` - Callack for each "line" with arguments:
+  * `line` - String of characters up to the set terminator
+  * `callback` - Callback function when ready for next line
+ * `endCallback(err)` - Callback when finished reading "lines", will return Node `fs.read` errors
+
+---
+### close(callback)
+Close the file
+
+__Arguments__
+ * `callback(err)` - Callback when closed, will return Node `fs.close` errors
+
+---
+## Developer Commands:
+---
+
+ * `npm install` - Install development modules
+ * `npm test` - Run development tests
+ * `npm run coverage` - Generate test coverage report in `./coverage` folder
+ * `npm run lint` - Run JSHint over codebase
