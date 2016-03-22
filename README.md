@@ -1,10 +1,19 @@
 # Line By Line
 
-This module contains a class for reading the content of a file in a manner similar to Node.js readLine, supporting custom delimiters and a lazy loading approach.
+This module contains a class for reading the content of a file in a manner 
+similar to Node.js readLine, supporting custom delimiters and a lazy loading 
+approach.
 
-The class buffers a small potion of the file at any given time, and can read through massive files with a minimal memory footprint. It is best suited to cases when one intends to perform various asynchronous tasks on each line in a huge file (such as typical Extract-Transform-Load scenarios).
+The class buffers a small potion of the file at any given time, 
+and can read through massive files with a minimal memory footprint. It is best 
+suited to cases when one intends to perform various asynchronous tasks on each 
+line in a huge file (such as typical Extract-Transform-Load scenarios). 
+__Be aware:__ text will be buffered until a terminator sequence is hit, which 
+may consume massive amounts of memory if there are few "terminators" in a given 
+file.
 
-My primary motivation for this project was to make a class for use in a text adventure project, gradually reading throught the file at the user's pace.
+My primary motivation for this project was to make a class for use in a text 
+adventure project, gradually reading throught the file at the user's pace.
 
 #### Example Usage:
 
@@ -40,7 +49,7 @@ Returns a file reader instance
 __Arguments__
  * `filePath` - Path to a file for reading
  * `terminator` - *Optional* String or RegExp to split file into "lines", default = "\n"
- * `encoding` - *Optional* file encoding, default = "UTF8"
+ * `encoding` - *Optional* file encoding, default = "UTF8", supports encodings that Node provides.
  * `bufferSize` - *Optional* Bytes to buffer when reading, default = 4096
 
 __Example__
@@ -56,10 +65,6 @@ Open the file for reading
 
 __Arguments__
  * `callback(err)` - Callback when opened, will return Node `fs.open` errors
-
----
-### hasMore()
-Returns `true` if there is more content in file, otherwise `false`
 
 ---
 ### read(callback)

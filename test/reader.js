@@ -22,7 +22,7 @@ describe("LineReader - light test", function() {
 		testReader.read(function(err, line) {
 			should.not.exist(err);
 			should.exist(line);
-			line.should.match("Test");
+			line.should.match("test-file.txt");
 			done();
 		});
 	});
@@ -39,7 +39,7 @@ describe("LineReader - light test", function() {
 		testReader.read(function(err, line) {
 			should.not.exist(err);
 			should.exist(line);
-			line.should.match("Test");
+			line.should.match("test-file.txt");
 			done();
 		});
 	});
@@ -55,8 +55,8 @@ describe("LineReader - load test", function() {
 
 	let testReader = null;
 
-	it("constructor (with small buffer", function() {
-		testReader = new LineReader("./test/test-file.txt", null, null, 4);
+	it("constructor (with small buffer)", function() {
+		testReader = new LineReader("./test/test-file.txt", null, null, 7);
 		should.exist(testReader);
 	});
 
@@ -73,7 +73,7 @@ describe("LineReader - load test", function() {
 			return setImmediate(callback);
 		}, function(err) {
 			should.not.exist(err);
-			lineCount.should.equal(31);
+			lineCount.should.equal(175);
 			done();
 		});
 	});
