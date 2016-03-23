@@ -1,4 +1,4 @@
-# Line By Line
+# SlowLine
 
 This module contains a class for reading the content of a file in a manner 
 similar to Node.js readLine, supporting custom delimiters and a lazy loading 
@@ -8,9 +8,8 @@ The class buffers a small potion of the file at any given time,
 and can read through massive files with a minimal memory footprint. It is best 
 suited to cases when one intends to perform various asynchronous tasks on each 
 line in a huge file (such as typical Extract-Transform-Load scenarios). 
-__Be aware:__ text will be buffered until a terminator sequence is hit, which 
-may consume massive amounts of memory if there are few "terminators" in a given 
-file.
+__Be aware:__ text will be buffered until a "terminator" sequence is hit, which 
+can consume massive amounts of memory.
 
 My primary motivation for this project was to make a class for use in a text 
 adventure project, gradually reading throught the file at the user's pace.
@@ -18,9 +17,9 @@ adventure project, gradually reading throught the file at the user's pace.
 #### Example Usage:
 
 ```js
-var LineReader = require("line-by-line");
+var SlowReader = require("SlowLine").SlowReader;
 
-var reader = new LineReader("./my-file.txt");
+var reader = new SlowReader("./my-file.txt");
 
 reader.open(function(err) {
 	// Can call read for as many lines as required
@@ -40,7 +39,7 @@ reader.open(function(err) {
 });
 ```
 
-## API:
+## SlowReader API:
 ---
 
 ### constructor(filePath[, terminator, encoding, bufferSize])
@@ -100,3 +99,12 @@ __Arguments__
  * `npm test` - Run development tests
  * `npm run coverage` - Generate test coverage report in `./coverage` folder
  * `npm run lint` - Run JSHint over codebase
+
+---
+## TODO
+---
+ * SlowWriter - Same concept, but for writing files
+ * Investigate using streams instead of bufers
+ * Allow users to set a "bufferLimit", where SlowReader will abandon buffering 
+ a huge "line"
+ * Expose options for trimming whitespace, and skipping empty "lines"

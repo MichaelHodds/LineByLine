@@ -1,16 +1,16 @@
 {
-  "name": "line-by-line",
-  "version": "1.0.0",
-  "description": "Serial file reader with configurable line terminator",
+  "name": "slow-line",
+  "version": "0.6.0",
+  "description": "Asynchronous readline-like file reader with configurable line terminator",
   "author": "Michael Hodds <mhodds@outlook.com>",
   "license": "UNLICENSED",
-  "main": "./lib/reader.js",
+  "main": "./lib/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MichaelHodds/LineByLine"
+    "url": "https://github.com/MichaelHodds/SlowLine"
   },
   "bugs": {
-    "url": "https://github.com/MichaelHodds/LineByLine/issues"
+    "url": "https://github.com/MichaelHodds/SlowLine/issues"
   },
   "dependencies": {
   },
@@ -20,7 +20,7 @@
     "gulp-jshint": "2.0.x",
     "gulp-mocha": "2.2.x",
     "jshint": "2.9.x",
-    "should": "8.2.x"
+    "should": "8.3.x"
   },
   "scripts": {
     "test": "gulp test",

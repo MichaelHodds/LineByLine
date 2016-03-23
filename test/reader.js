@@ -2,15 +2,15 @@
 /* jshint node: true */
 "use strict"
 
-var should = require("should");
-var LineReader = require("../lib/reader");
+const should = require("should");
+const SlowReader = require("../").SlowReader;
 
-describe("LineReader - light test", function() {
+describe("SlowReader - light test", function() {
 
 	let testReader = null;
 
 	it("constructor", function() {
-		testReader = new LineReader("./test/test-file.txt");
+		testReader = new SlowReader("./test/test-file.txt");
 		should.exist(testReader);
 	});
 
@@ -50,13 +50,13 @@ describe("LineReader - light test", function() {
 
 });
 
-describe("LineReader - load test", function() {
+describe("SlowReader - load test", function() {
 	this.timeout(60000);
 
 	let testReader = null;
 
 	it("constructor (with small buffer)", function() {
-		testReader = new LineReader("./test/test-file.txt", null, null, 7);
+		testReader = new SlowReader("./test/test-file.txt", null, null, 7);
 		should.exist(testReader);
 	});
 
