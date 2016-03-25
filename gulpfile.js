@@ -19,7 +19,7 @@ gulp.task("lint", function() {
 
 gulp.task("test", function() {
 	return gulp.src("./test/*.js", { read: false })
-		.pipe(mocha());
+		.pipe(mocha({ bail: true }));
 });
 
 gulp.task("pre-coverage", function () {

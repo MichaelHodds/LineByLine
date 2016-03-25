@@ -1,5 +1,5 @@
 test-file.txt
-// A sample of strings from the "big list of naughty strings"
+#	A sample of strings from the "big list of naughty strings"
 https://github.com/minimaxir/big-list-of-naughty-strings/blob/master/blns.txt
 
 #	Special Characters
@@ -92,12 +92,11 @@ __ﾛ(,_,*)
 🚾 🆒 🆓 🆕 🆖 🆗 🆙 🏧
 0️⃣ 1️⃣ 2️⃣ 3️⃣ 4️⃣ 5️⃣ 6️⃣ 7️⃣ 8️⃣ 9️⃣ 🔟
 
-#       Regional Indicator Symbols
+#	Regional Indicator Symbols
 #
-#       Regional Indicator Symbols can be displayed differently across
-#       fonts, and have a number of special behaviors
+#	Regional Indicator Symbols can be displayed differently across fonts, and have a number of special behaviors
 
-🇺🇸🇷🇺🇸 🇦🇫🇦🇲🇸                                                                                          
+🇺🇸🇷🇺🇸 🇦🇫🇦🇲🇸
 🇺🇸🇷🇺🇸🇦🇫🇦🇲
 🇺🇸🇷🇺🇸🇦
 
@@ -118,6 +117,7 @@ __ﾛ(,_,*)
 ﷽
 ﷺ
 مُنَاقَشَةُ سُبُلِ اِسْتِخْدَامِ اللُّغَةِ فِي النُّظُمِ الْقَائِمَةِ وَفِيم يَخُصَّ التَّطْبِيقَاتُ الْحاسُوبِيَّةُ، 
+
 #	Unicode Spaces
 #
 #	Strings which contain unicode space characters with special properties (c.f. https://www.cs.tut.fi/~jkorpela/chars/spaces.html)
@@ -151,6 +151,7 @@ test⁠test‫
 ̦H̬̤̗̤͝e͜ ̜̥̝̻͍̟́w̕h̖̯͓o̝͙̖͎̱̮ ҉̺̙̞̟͈W̷̼̭a̺̪͍į͈͕̭͙̯̜t̶̼̮s̘͙͖̕ ̠̫̠B̻͍͙͉̳ͅe̵h̵̬͇̫͙i̹͓̳̳̮͎̫̕n͟d̴̪̜̖ ̰͉̩͇͙̲͞ͅT͖̼͓̪͢h͏͓̮̻e̬̝̟ͅ ̤̹̝W͙̞̝͔͇͝ͅa͏͓͔̹̼̣l̴͔̰̤̟͔ḽ̫.͕
 Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
 
+
 #	Unicode Upsidedown
 #
 #	Strings which contain unicode with an "upsidedown" effect (via http://www.upsidedowntext.com)
@@ -171,4 +172,4 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
 𝚃𝚑𝚎 𝚚𝚞𝚒𝚌𝚔 𝚋𝚛𝚘𝚠𝚗 𝚏𝚘𝚡 𝚓𝚞𝚖𝚙𝚜 𝚘𝚟𝚎𝚛 𝚝𝚑𝚎 𝚕𝚊𝚣𝚢 𝚍𝚘𝚐
 ⒯⒣⒠ ⒬⒰⒤⒞⒦ ⒝⒭⒪⒲⒩ ⒡⒪⒳ ⒥⒰⒨⒫⒮ ⒪⒱⒠⒭ ⒯⒣⒠ ⒧⒜⒵⒴ ⒟⒪⒢
 
-End of test file
+#	End of test file

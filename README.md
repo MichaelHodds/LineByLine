@@ -53,9 +53,9 @@ __Arguments__
 
 __Example__
 ```js
-var LineReader = require("line-by-line");
+var SlowReader = require("SlowLine").SlowReader;
 
-var reader = new LineReader("./my-file.txt");
+var reader = new SlowReader("./my-file.txt");
 ```
 
 ---
