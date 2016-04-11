@@ -1,9 +1,9 @@
 {
   "name": "slow-line",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "Asynchronous readline-like file reader with configurable line terminator",
   "author": "Michael Hodds <mhodds@outlook.com>",
-  "license": "UNLICENSED",
+  "license": "GPL-3.0",
   "main": "./lib/main.js",
   "repository": {
     "type": "git",

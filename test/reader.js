@@ -11,7 +11,7 @@ describe("SlowReader - Functions", function() {
 
 	it("constructor", function() {
 		// Use a very small buffer
-		testReader = new SlowReader("./test/test-file.txt", null, null, 4);
+		testReader = new SlowReader("./test/test-file.txt", { bufferSize: 4 });
 		should.exist(testReader);
 	});
 
@@ -113,7 +113,7 @@ describe("SlowReader - Delimiter", function() {
 	let testReader = null;
 
 	it("constructor", function() {
-		testReader = new SlowReader("./test/test-file.txt", "#\t");
+		testReader = new SlowReader("./test/test-file.txt", { terminator: "#\t" });
 		should.exist(testReader);
 	});
 

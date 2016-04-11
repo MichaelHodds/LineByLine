@@ -42,14 +42,15 @@ reader.open(function(err) {
 ## SlowReader API:
 ---
 
-### constructor(filePath[, terminator, encoding, bufferSize])
-Returns a file reader instance
+### constructor(filePath[, options ])
+Returns a file reader instance.
 
 __Arguments__
  * `filePath` - Path to a file for reading
- * `terminator` - *Optional* String or RegExp to split file into "lines", default = "\n"
- * `encoding` - *Optional* file encoding, default = "UTF8", supports encodings that Node provides.
- * `bufferSize` - *Optional* Bytes to buffer when reading, default = 4096
+ * `options` - *Optional* configuration for file reading:
+  * `terminator` - *Optional* String or RegExp to split file into "lines", default = /\r?\n/, will split files on "\n" or "\r\n"
+  * `encoding` - *Optional* file encoding, default = "utf8", supports encodings that Node provides
+  * `bufferSize` - *Optional* Bytes to buffer when reading, default = 4096
 
 __Example__
 ```js
@@ -104,7 +105,7 @@ __Arguments__
 ## TODO
 ---
  * SlowWriter - Same concept, but for writing files
- * Investigate using streams instead of bufers
+ * ~~Investigate using streams instead of bufers~~
  * Allow users to set a "bufferLimit", where SlowReader will abandon buffering 
  a huge "line"
- * Expose options for trimming whitespace, and skipping empty "lines"
+ * Expose options for skipping empty "lines"
