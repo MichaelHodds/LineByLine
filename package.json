@@ -17,9 +17,8 @@
   "devDependencies": {
     "gulp": "3.9.x",
     "gulp-istanbul": "0.10.x",
-    "gulp-jshint": "2.0.x",
+    "gulp-eslint": "2.0.x",
     "gulp-mocha": "2.2.x",
-    "jshint": "2.9.x",
     "should": "8.3.x"
   },
   "scripts": {
