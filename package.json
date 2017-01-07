@@ -1,6 +1,6 @@
 {
   "name": "slow-line",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Asynchronous readline-like file reader with configurable line terminator",
   "author": "Michael Hodds <mhodds@outlook.com>",
   "license": "GPL-3.0",
@@ -12,18 +12,17 @@
   "bugs": {
     "url": "https://github.com/MichaelHodds/SlowLine/issues"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "gulp": "3.9.x",
-    "gulp-istanbul": "0.10.x",
-    "gulp-eslint": "2.0.x",
-    "gulp-mocha": "2.2.x",
-    "should": "8.3.x"
+    "eslint": "^3.13.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "should": "^11.1.0"
   },
   "scripts": {
-    "test": "gulp test",
-    "coverage": "gulp coverage",
-    "lint": "gulp lint"
+    "test": "mocha",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+    "lint": "eslint ./lib/",
+    "postlint": "eslint ./test/"
   }
 }

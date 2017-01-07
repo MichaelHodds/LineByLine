@@ -1,5 +1,5 @@
 // reader.js
-/* jshint node: true */
+/* eslint-env mocha */
 "use strict"
 
 const should = require("should");
